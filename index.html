@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ecf8fc" />
+    <title>mind+ — cognitive training</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <button class="brand" data-route="home" aria-label="Go to home"><img src="assets/figma-logo.png" alt="mind+" /></button>
+        <div class="points"><img src="assets/credits-art.png" alt="1,200 credits" /></div>
+        <button class="store-shortcut" data-route="store" aria-label="Open store"><img src="assets/store-icon.png" alt="" /></button>
+      </header>
+
+      <section id="home" class="view active" aria-label="Home">
+        <div class="figma-home-top">
+          <img class="top-grid" src="assets/figma-grid.png" alt="" />
+          <p class="welcome-vertical">Welcome</p>
+          <div class="avatar-halo"><img class="avatar-circle" src="assets/avatar-ellipse.png" alt="" /><img class="avatar-character" src="assets/figma-avatar.gif" alt="Animated mind+ avatar" /></div>
+          <div class="score-label score-ai">AI-powered</div><div class="score-label score-word">Scores</div>
+          <div class="figma-score"><strong id="score">82</strong><div><b>Cognitive<br>Score</b><button class="score-toggle" data-score-toggle aria-controls="scoreDetails" aria-expanded="false"><img class="score-arrow" src="assets/score-arrow.svg" alt="" /></button><span>Above average TOP 30%</span></div></div>
+          <div class="score-details" id="scoreDetails" aria-label="Detailed cognitive scores">
+            <div class="score-skill"><span>Memory</span><i><b style="--fill:100%"></b></i></div>
+            <div class="score-skill"><span>Attention</span><i><b style="--fill:100%"></b></i></div>
+            <div class="score-skill"><span>Logic</span><i><b style="--fill:100%"></b></i></div>
+            <div class="score-skill"><span>Speed</span><i><b style="--fill:100%"></b></i></div>
+            <div class="score-skill"><span>Perception</span><i><b style="--fill:100%"></b></i></div>
+          </div>
+        </div>
+        <button class="today-card" data-route="store"><img class="today-card-background" src="assets/training-card-background.png" alt="" /><span class="today-heading"><b>Your Training</b> for Today</span><small>4 activities · 8 min · <b>200 pts</b></small><i><img src="assets/arrow-up-right.png" alt="" /></i><div class="today-icons"><span><img src="assets/training-memory-active.png" alt="" />Memory</span><span><img src="assets/training-reasoning-active.png" alt="" />Reasoning</span><span><img src="assets/training-focus-active.png" alt="" />Focus</span><span><img src="assets/training-spatial-active.png" alt="" />Spatial</span></div><img class="training-counter" src="assets/training-counter.png" alt="1 of 4" /></button>
+        <div class="figma-section-heading"><h2><b>Play</b><br>Freely</h2><button class="text-button" data-route="store">Explore all</button></div>
+        <div class="figma-game-scroller image-games" id="quickGames" aria-label="Scroll through games"></div>
+        <div class="figma-section-heading special-title"><h2>Special<br>Trainings</h2><button class="text-button" data-route="store">Explore all</button></div>
+        <div class="figma-program-row image-programs program-cards"><button data-demo="Over 65 Program" aria-label="Open Over 65 Program"><img src="assets/program-over-66.png" alt="Over 65 Program" /></button><button data-demo="Math Program" aria-label="Open Math Program"><img src="assets/program-math.png" alt="Math Program" /></button><button data-demo="Logic Program" aria-label="Open Logic Program"><img src="assets/program-logic.png" alt="Logic Program" /></button><button data-demo="Language Program" aria-label="Open Language Program"><img src="assets/program-language.png" alt="Language Program" /></button></div>
+        <small class="brain-date">14/10/2026</small>
+        <article class="brain-tip"><img class="brain-tip-art" src="assets/brain-tip-separate.png" alt="" /><h2><b>Brain tip</b><br>Of the day</h2><p>Drink a glass of water soon after waking up—mild dehydration can make focus and energy feel worse.</p><div class="brain-tip-arrows"><img src="assets/arrow-left.png" alt="Previous tip" /><img src="assets/arrow-right.png" alt="Next tip" /></div></article>
+        <footer class="figma-footer"><a>Contact Us</a><a>FAQ</a><a>Terms and Conditions</a></footer>
+      </section>
+
+      <section id="store" class="view" aria-label="Store">
+        <div class="page-title"><span class="eyebrow">mind+ games</span><h1>Choose your next<br><em>small win.</em></h1><p>Six short activities to train your mind, at your own pace.</p></div>
+        <div class="store-grid" id="storeGames"></div>
+      </section>
+
+      <section id="assessment" class="view assessment" aria-label="Initial assessment">
+        <div class="assessment-progress"><button class="close" data-route="home" aria-label="Close assessment">×</button><div><span id="stepLabel">Step 1 of 4</span><div class="bar"><i id="progressBar"></i></div></div><span class="assessment-points">☀ 1,200</span></div>
+        <div id="assessmentContent"></div>
+        <div class="assessment-actions"><button class="secondary" id="backBtn">Back</button><button class="primary" id="nextBtn">Next <span>→</span></button></div>
+      </section>
+
+      <section id="game" class="view game-page" aria-label="Game">
+        <button class="game-back" data-route="store" aria-label="Back to games">← Back to games</button>
+        <div id="gamePageContent"></div>
+      </section>
+
+      <nav class="bottom-nav" aria-label="Primary navigation">
+        <img class="bottom-nav-art" src="assets/bottom-nav-reference.png" alt="" />
+        <button class="nav-item active" data-route="home" aria-label="Home"><img src="assets/nav-home.svg" alt="" /></button>
+        <button class="nav-item" data-route="store" aria-label="Games"><img src="assets/nav-games.svg" alt="" /></button>
+        <button class="nav-item" data-route="assessment" aria-label="Assessment"><img src="assets/nav-progress.svg" alt="" /></button>
+        <button class="nav-item" data-route="home" data-scroll-skills aria-label="Cognitive skills"><img src="assets/nav-skills.svg" alt="" /></button>
+        <button class="nav-item" data-demo="profile" aria-label="Profile"><img src="assets/nav-profile.svg" alt="" /></button>
+      </nav>
+    </main>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
